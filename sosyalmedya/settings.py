@@ -120,6 +120,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static/"),
 )
+MEDIA_URL='/uploads/'# burada fotoların web sitesinde görüntülenmesi sağlanmıştır
 MEDIA_ROOT=os.path.join(BASE_DIR,'uploads')# burada web sitesine yüklenen fotoların nereye gideceğini belirttim
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
