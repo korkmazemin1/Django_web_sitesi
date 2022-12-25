@@ -9,7 +9,7 @@
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title>e-mintagram </title>
+    <title>{% block baslik %} {% endblock %} </title>
 
 
     <!-- ===============================================-->
@@ -35,15 +35,10 @@
     <link href="{% static 'vendors/swiper/swiper-bundle.min.css'%}" rel="stylesheet">
     <link href="{% static 'assets/css/theme.css'%}" rel="stylesheet" />
     <link href="{% static 'assets/css/user.css'%}" rel="stylesheet" />
-{% block head  %} {% endblock %} <!--   daha sonra kod eklemek için ayarladık-->
+
 </head>
 
 
-<body>
-{% include 'ana_content.html' %}<!--  burada parçaladığımız kodları çağırdık -->
-{% block degis1  %} {% endblock %}<!--   -->
-{% block degis2  %} {% endblock %}
-{% block degis3  %} {% endblock %}
-{% include 'ana_footer.html' %}
-</body>
-</html>
+{% block anaicerik %}{% endblock %}
+{% block ozel %}{% endblock %}
+{% block footer %}{% endblock %}
