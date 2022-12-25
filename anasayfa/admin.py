@@ -7,7 +7,7 @@ from anasayfa.models import ayarlar,IletisimFormuMesaj
 class ayarlarAdmin(admin.ModelAdmin):
     list_display = ['baslik','aciklama']
 class IletisimFormuMesajAdmin(admin.ModelAdmin):
-    list_display = ['isim','email','konu','mesaj_durumu']
+    list_display = ['isminiz','email','konu','mesaj_durumu']
     list_filter = ['mesaj_durumu']
 
 admin.site.register(ayarlar, ayarlarAdmin)

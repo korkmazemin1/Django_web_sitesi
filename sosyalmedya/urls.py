@@ -27,7 +27,7 @@ urlpatterns = [
     path('iletisim/',views.iletisim,name='iletisim'),
     path('paylasim/', include("paylasim.urls")),
     path('admin/', admin.site.urls),
-    path(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
     path('hakkimizda/',views.hakkimizda,name='hakkimizda')
 
 ]
