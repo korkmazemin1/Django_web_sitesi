@@ -16,13 +16,20 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.conf.urls.static import static
+from django.template.defaulttags import url
 from django.urls import path, include
+
+from anasayfa import views
 
 urlpatterns = [
     path('', include("anasayfa.urls")),
-    path('anasayfa/', include("anasayfa.urls")),
+    path('anasayfa/',views.anasayfayz,name='anasayfa'),
+    path('iletisim/',views.iletisim,name='iletisim'),
     path('paylasim/', include("paylasim.urls")),
     path('admin/', admin.site.urls),
+    path(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    path('hakkimizda/',views.hakkimizda,name='hakkimizda')
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

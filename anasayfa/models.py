@@ -1,4 +1,7 @@
 from django.db import models
+from ckeditor_uploader.fields import RichTextUploadingField
+from django.forms import ModelForm, TextInput
+
 
 # Create your models here.
 class ayarlar(models.Model):# videodaki images
@@ -22,11 +25,41 @@ class ayarlar(models.Model):# videodaki images
     facebook=models.CharField(blank=True,max_length=50)
     instagram=models.CharField(blank=True,max_length=50)
     twitter=models.CharField(blank=True,max_length=50)
-    hakkimizda=models.TextField(blank=True)
-    iletisim=models.TextField(blank=True)
-    referanslar=models.TextField(blank=True)
+    hakkimizda=RichTextUploadingField(blank=True)
+    iletisim=RichTextUploadingField(blank=True)
+    referanslar=RichTextUploadingField(blank=True)
     durum=models.CharField(max_length=10,choices=STATUS)
     create_at=models.DateTimeField(auto_now_add=True)
     update_at=models.DateTimeField(auto_now=True)
     def __str__(self):
         return str(self.baslik)
+
+class IletisimFormuMesaj(models.Model):
+    STATUS=(
+        ('YENİMESAJ','YENİMESAJ')
+        ('OKUNDU','OKUNDU')
+    )
+    email = models.CharField(blank=True,max_length=20)
+    isminiz=models.CharField(blank=False,max_length=20)
+    telefon_numarasi=models.CharField(blank=False,max_length=20)
+    sorumlu=models.CharField(blank=False,max_length=20)
+    konu = models.CharField(blank=True, max_length=20)
+    isteme_tarihi=models.CharField(blank=True,max_length=20)
+    mesaj=models.CharField(blank=True,max_length=200)
+    bizi_nereden=models.CharField(blank=True,max_length=20)
+    mesaj_durumu=models.CharField(max_length=10,choices=STATUS,default="YENİMESAJ")
+    ip=models.CharField(blank=True,max_length=20)
+    create_at=models.DateTimeField(auto_now_add=True)
+    update_at=models.DateTimeField(auto_now=True)
+class IletisimFormu(ModelForm):
+    class Meta:
+        model=IletisimFormuMesaj
+        fields=['isminiz','konu','email','mesaj']
+        widgets={
+            'isminiz':TextInput(attrs={'class':'input','placeholder':'İsim ve Soyisim'}),
+            'konu': TextInput(attrs={'class': 'input', 'placeholder': 'Konu'}),
+            'email': TextInput(attrs={'class': 'input', 'placeholder': 'Email adresi'}),
+            'mesaj': RichTextUploadingField(attrs={'class': 'input', 'placeholder': 'Mesajınız','rows':'S'})
+
+
+        }

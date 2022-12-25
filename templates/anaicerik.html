@@ -28,12 +28,12 @@
                 <div class="d-lg-flex flex-center-start gap-3 overflow-hidden">
                   <ul class="navbar-nav ms-auto fs-4 ps-6">
                       {% load static  %}
-                    <li class="nav-item"><a class="nav-link d-inline-block nav-text-outlined lh-1 text-white fs-5" aria-current="page" href="{% static 'index.html'%}">Anadayfa</a></li>
-                    <li class="nav-item"><a class="nav-link d-inline-block nav-text-outlined lh-1 text-white fs-5 active" aria-current="page" href="{% static 'portfolio.html'%}">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link d-inline-block nav-text-outlined lh-1 text-white fs-5" aria-current="page" href="/anasayfa">Anasayfa</a></li>
+                    <li class="nav-item"><a class="nav-link d-inline-block nav-text-outlined lh-1 text-white fs-5 X" aria-current="page" href="{% static 'portfolio.html'%}">Profil</a></li>
                     <li class="nav-item"><a class="nav-link d-inline-block nav-text-outlined lh-1 text-white fs-5" aria-current="page" href="{% static 'gallery.html'%}">Galeri</a></li>
                     <li class="nav-item"><a class="nav-link d-inline-block nav-text-outlined lh-1 text-white fs-5" aria-current="page" href="{% static 'exhibitions.html'%}">Exhibitions</a></li>
-                    <li class="nav-item"><a class="nav-link d-inline-block nav-text-outlined lh-1 text-white fs-5" aria-current="page" href="{% static 'about.html'%}">hakkımızda</a></li>
-                    <li class="nav-item"><a class="nav-link d-inline-block nav-text-outlined lh-1 text-white fs-5" aria-current="page" href="{% static 'blog.html'%}">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link d-inline-block nav-text-outlined lh-1 text-white fs-5" aria-current="page" href="/hakkimizda">hakkımızda</a></li>
+                    <li class="nav-item"><a class="nav-link d-inline-block nav-text-outlined lh-1 text-white fs-5" aria-current="page" href="/iletisim">iletişim</a></li>
                   </ul>
                 </div>
               </div>
@@ -46,12 +46,12 @@
                   {% load static %}
                 <div class="d-flex gap-3 align-items-start"><a class="mb-0 ms-auto text-warning fs-0 fw-bold text-uppercase" href="{% static 'blog.html#contact'%}">{% block iletisimsayfa %}{% endblock %}</a>
                   <ul class="navbar-nav navbar-fotogency ms-auto text-end">
-                    <li class="nav-item px-2 position-relative"><a class="nav-link pt-0" aria-current="page" href="{% static 'index.html'%}">{% block sayfaliste1 %}{% endblock %}</a></li>
-                    <li class="nav-item px-2 position-relative"><a class="nav-link pt-0 active" aria-current="page" href="{% static 'portfolio.html'%}">{% block sayfaliste2 %}{% endblock %}</a></li>
-                    <li class="nav-item px-2 position-relative"><a class="nav-link pt-0" aria-current="page" href="{% static 'gallery.html'%}">{% block sayfaliste3 %}{% endblock %}</a></li>
-                    <li class="nav-item px-2 position-relative"><a class="nav-link pt-0" aria-current="page" href="{% static 'exhibitions.html'%}">{% block sayfaliste4 %}{% endblock %}</a></li>
-                    <li class="nav-item px-2 position-relative"><a class="nav-link pt-0" aria-current="page" href="{% static 'about.html'%}">{% block sayfaliste5 %}{% endblock %}</a></li>
-                    <li class="nav-item px-2 position-relative"><a class="nav-link pt-0" aria-current="page" href="{% static 'blog.html'%}">{% block sayfaliste6 %}{% endblock %}</a></li>
+                    <li class="nav-item px-2 position-relative"><a class="nav-link pt-0 {% block activeanasayfa %}{% endblock %}" aria-current="page" href="/anasayfa">{% block sayfaliste1 %}{% endblock %}</a></li>
+                    <li class="nav-item px-2 position-relative"><a class="nav-link pt-0 {% block activeprofil %}{% endblock %}" aria-current="page" href="{% static 'portfolio.html'%}">{% block sayfaliste2 %}{% endblock %}</a></li>
+                    <li class="nav-item px-2 position-relative"><a class="nav-link pt-0 {% block activeGaleri %}{% endblock %}" aria-current="page" href="{% static 'gallery.html'%}">{% block sayfaliste3 %}{% endblock %}</a></li>
+                    <li class="nav-item px-2 position-relative"><a class="nav-link pt-0 {% block activeExhibitons %}{% endblock %}" aria-current="page" href="{% static 'exhibitions.html'%}">{% block sayfaliste4 %}{% endblock %}</a></li>
+                    <li class="nav-item px-2 position-relative"><a class="nav-link pt-0 {% block activeHakkımızda %}{% endblock %}" aria-current="page" href="/hakkimizda">{% block sayfaliste5 %}{% endblock %}</a></li>
+                    <li class="nav-item px-2 position-relative"><a class="nav-link pt-0{% block activeİetişim %}{% endblock %}" aria-current="page" href="/iletisim">{% block sayfaliste6 %}{% endblock %}</a></li>
                   </ul>
                 </div>
               </div>

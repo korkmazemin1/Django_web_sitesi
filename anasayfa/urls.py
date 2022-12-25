@@ -6,4 +6,5 @@ urlpatterns = [
     # ex: /anasayfa/
     path('', views.anasayfayz, name='anasayfayz'),
 
+
 ]
