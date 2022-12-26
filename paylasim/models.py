@@ -20,11 +20,20 @@ class fotiler(models.Model):# videodaki images
         ('TRUE', 'EVET'),
         ('FALSE', 'HAYIR'),
     )
+    baslik=models.CharField(max_length=54,blank=True,null=True)
     sahibi =models.ForeignKey(kullanici,on_delete=models.CASCADE)# kullanıcı sınıfından bir obje ebevyni oldu(parent)
     foti= models.ImageField(blank=True,upload_to='images/')# images olarak uploada kaydoldu ,eğer sınıflandırılmak istenirse images yazan yerde nereye lazımsa o şekilde yazabilirsin
     aciklama= models.CharField(max_length=54,blank=True,null=True)
+    slug = models.SlugField(blank=True,max_length=200)
     def __str__(self):
-        return str(self.sahibi)#stackoverflowdan bu şekilde aldım
+         full_path=[self.baslik]
+         k=self.sahibi
+         while k is not None:
+             full_path.append(k.kullaniciadi)
+             k = k.sahibi
+         return '>>'.join(full_path[::-1])
+
+
 
     def foti_tag(self):
         return mark_safe('<img src="{}" height="50"/>'.format(self.foti.url))

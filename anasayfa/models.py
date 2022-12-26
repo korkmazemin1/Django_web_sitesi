@@ -67,6 +67,6 @@ class IletisimFormu(ModelForm):
             'isminiz': TextInput(attrs={'class': 'input', 'placeholder': 'İsim ve Soyisim'}),
             'konu': TextInput(attrs={'class': 'input', 'placeholder': 'Konu'}),
             'email': TextInput(attrs={'class': 'input', 'placeholder': 'Email adresi'}),
-            'mesaj': TextInput(attrs={'class': 'input', 'placeholder': 'Mesajınız', 'rows': 'S'})
+            'mesaj': TextInput(attrs={'class': 'id', 'placeholder': 'Mesajınız', 'rows': 'S'})
 
         }

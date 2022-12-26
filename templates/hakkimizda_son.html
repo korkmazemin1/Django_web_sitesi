@@ -1,6 +1,26 @@
 {% extends "header.html" %}
-{% block baslik %}{{ Ayarlar.iletisim }} {% endblock %}
-{% block anaicerik %}{% include 'anaicerik_extend.html' %}{% endblock %}
+{% block baslik %}Hakkımızda|e-mintagram {% endblock %}
+{% block activeanasayfa %}{% endblock %}
+{% block activeprofil %}{% endblock %}
+{% block activeExhibitons %}{% endblock %}
+{% block activeGaleri %}{% endblock %}
+{% block activeHakkımızda %}active{% endblock %}
+{% block activeİetişim %}{% endblock %}
+{% block büyükyazi1 %}Ekip{% endblock %}
+{% block büyükyazi2 %}Burada {% endblock %}
+{% block büyükyazisag %}Birlikte Güçlüyüz{% endblock %}
+{% block siteadi1 %}e-min{% endblock %} {% block siteadi2 %}tagram{% endblock %}
+{% block iletisimsayfa %}bizimle iletişime geçin{% endblock %}
+<!-- sağ taraftaki sayfa seçenekleri-->
+{% block sayfaliste1 %}Anasayfa{% endblock %}
+{% block sayfaliste2 %}Profil{% endblock %}
+{% block sayfaliste3 %}Galeri{% endblock %}
+{% block sayfaliste4 %} Sergiler{% endblock %}
+{% block sayfaliste5 %}Hakkımızda{% endblock %}
+{% block sayfaliste6 %}İletişim{% endblock %}
+
+{% block belirsiz1 %}{% endblock %}
+{% block belirsiz2 %}{% endblock %}
 {% block ozel %}{% include 'Hakkimizda_ozel_extend.html'%}{% endblock %}
 {% block footer %}{% include 'footer_extend.html' %}{% endblock %}
 

@@ -39,6 +39,72 @@
 </head>
 
 
-{% block anaicerik %}{% endblock %}
+{% load static  %}
+<body>
+  <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main" id="top">
+      <div class="cursor-outer d-none d-md-block"></div>
+      <nav class="navbar navbar-light py-3 px-0 overflow-hidden">
+        <div class="container px-md-5">
+          <div class="row w-100 g-0 justify-content-between">
+            <div class="col-8">
+                {% load static  %}
+              <div class="d-inline-block"><a class="navbar-brand pt-0 fs-3 text-black d-flex align-items-center" href="{% static 'index.html'%}"><img class="img-fluid" src="{% static 'assets/img/icons/logo-icon.png'%}" alt="" /><span class="fw-bolder ms-2">{% block siteadi1 %}{% endblock %}</span><span class="fw-thin">{% block siteadi2 %}{% endblock %}</span></a></div>
+              <div class="mt-4 d-none d-lg-block">
+                <h1 class="text-uppercase fs-lg-7 fs-5 fw-bolder text-300 lh-1 position-relative z-index-0">{% block büyükyazi1 %}{% endblock %}</h1>
+                <h1 class="d-none d-md-block fw-bolder text-outlined fs-7 text-white lh-1 mt-n4 position-relative z-index--1">{% block büyükyazi2 %}{% endblock %}</h1>
+              </div>
+            </div>
+            <div class="col-4 d-lg-none text-end pe-0">
+              <button class="btn p-0 shadow-none text-black fs-2 d-inline-block" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas" aria-expanded="false" aria-label="Toggle offcanvas navigation"><span class="menu-bar"></span></button>
+            </div>
+            <div class="offcanvas offcanvas-end px-0" id="navbarOffcanvas" aria-labelledby="navbarOffcanvasTitle" aria-hidden="true">
+              <div class="offcanvas-header justify-content-end">
+                <h5 class="visually-hidden offcanvas-title" id="navbarOffcanvasTitle">Menu</h5>
+                <button class="btn p-0 shadow-none text-black fs-2 d-inline text-end" type="button" data-bs-dismiss="offcanvas" aria-label="Close"><span class="menu-close-bar"></span></button>
+              </div>
+              <div class="offcanvas-body px-0">
+                <div class="d-lg-flex flex-center-start gap-3 overflow-hidden">
+                  <ul class="navbar-nav ms-auto fs-4 ps-6">
+                      {% load static  %}
+                    <li class="nav-item"><a class="nav-link d-inline-block nav-text-outlined lh-1 text-white fs-5" aria-current="page" href="/anasayfa">Anasayfa</a></li>
+                    <li class="nav-item"><a class="nav-link d-inline-block nav-text-outlined lh-1 text-white fs-5 X" aria-current="page" href="{% static 'portfolio.html'%}">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link d-inline-block nav-text-outlined lh-1 text-white fs-5" aria-current="page" href="{% static 'gallery.html'%}">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link d-inline-block nav-text-outlined lh-1 text-white fs-5" aria-current="page" href="{% static 'exhibitions.html'%}">Exhibitions</a></li>
+                    <li class="nav-item"><a class="nav-link d-inline-block nav-text-outlined lh-1 text-white fs-5" aria-current="page" href="/hakkimizda">hakkımızda</a></li>
+                    <li class="nav-item"><a class="nav-link d-inline-block nav-text-outlined lh-1 text-white fs-5" aria-current="page" href="/iletisim">iletişim</a></li>
+                  </ul>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="d-none d-lg-flex justify-content-end position-relative z-index-1">
+                <div class="position-absolute absolute-centered z-index--1">
+                  <h1 class="ms-2 fw-bolder text-outlined text-uppercase text-white pe-none display-1">{% block büyükyazisag %}{% endblock %}</h1>
+                </div>
+                  {% load static %}
+                <div class="d-flex gap-3 align-items-start"><a class="mb-0 ms-auto text-warning fs-0 fw-bold text-uppercase" href="{% static 'blog.html#contact'%}">{% block iletisimsayfa %}{% endblock %}</a>
+                  <ul class="navbar-nav navbar-fotogency ms-auto text-end">
+                    <li class="nav-item px-2 position-relative"><a class="nav-link pt-0 {% block activeanasayfa %}{% endblock %}" aria-current="page" href="/anasayfa">{% block sayfaliste1 %}{% endblock %}</a></li>
+                    <li class="nav-item px-2 position-relative"><a class="nav-link pt-0 {% block activeprofil %}{% endblock %}" aria-current="page" href="{% static 'portfolio.html'%}">{% block sayfaliste2 %}{% endblock %}</a></li>
+                    <li class="nav-item px-2 position-relative"><a class="nav-link pt-0 {% block activeGaleri %}{% endblock %}" aria-current="page" href="{% static 'gallery.html'%}">{% block sayfaliste3 %}{% endblock %}</a></li>
+                    <li class="nav-item px-2 position-relative"><a class="nav-link pt-0 {% block activeExhibitons %}{% endblock %}" aria-current="page" href="{% static 'exhibitions.html'%}">{% block sayfaliste4 %}{% endblock %}</a></li>
+                    <li class="nav-item px-2 position-relative"><a class="nav-link pt-0 {% block activeHakkımızda %}{% endblock %}" aria-current="page" href="/hakkimizda">{% block sayfaliste5 %}{% endblock %}</a></li>
+                    <li class="nav-item px-2 position-relative"><a class="nav-link pt-0 {% block activeİletisim %}{% endblock %}" aria-current="page" href="/iletisim">{% block sayfaliste6 %}{% endblock %}</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row g-0 mt-4 d-lg-none">
+            <h1 class="text-uppercase ps-0 fs-lg-7 fs-5 fw-bolder text-300 lh-1 position-relative z-index-0">{% block belirsiz1 %}{% endblock %}</h1>
+            <h1 class="fw-bolder text-outlined ps-0 fs-lg-7 fs-sm-6 fs-5 text-white lh-1 mt-sm-n4 mt-n3 position-relative z-index--1">{% block belirsiz2 %}{% endblock %}</h1>
+          </div>
+        </div>
+      </nav>
+        </main>
 {% block ozel %}{% endblock %}
 {% block footer %}{% endblock %}

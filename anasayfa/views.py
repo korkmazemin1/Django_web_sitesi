@@ -3,13 +3,15 @@ from django .shortcuts import render
 
 
 from anasayfa.models import ayarlar, IletisimFormu, IletisimFormuMesaj
+from paylasim.models import fotiler
 
 
 # sayfada görünmesini istediğiniz görünümleri burada belirtttik
 def anasayfayz(request): #videoda bu fonkun adı index
     Ayarlar=ayarlar.objects.get(pk=1)
-    context={"Ayarlar":Ayarlar}
-    return render(request,'profil_son.html',context)
+    sliderdata=fotiler.objects.all()[:100]
+    context={"Ayarlar":Ayarlar,"sliderdata":sliderdata}
+    return render(request,'anasayfa.html',context)
 def hakkimizda(request):
     Ayarlar=ayarlar.objects.get(pk=1)
     context ={"Ayarlar" :Ayarlar} #  buraya ileride hangi listeyi koymak istersen onu koyarsın
