@@ -22,7 +22,7 @@ def iletisim(request):
             data.isminiz= form.cleaned_data['isminiz']
             data.email = form.cleaned_data['email']
             data.konu = form.cleaned_data['konu']
-            data.ip =request.META.get('REMORE_ADDR')
+            data.ip =request.META.get('REMOTE_ADDR')
             data.mesaj = form.cleaned_data['mesaj']
             data.save()
             messages.success(request,"Mesajınız başarılı bir şekilde gönderilmiştir teşekkürler")
@@ -31,4 +31,4 @@ def iletisim(request):
     Ayarlar = ayarlar.objects.get(pk=1)
     form=IletisimFormu()
     context = {'Ayarlar':Ayarlar,'form':form}  # buraya ileride hangi listeyi koymak istersen onu koyarsın
-    return render(request, 'iletisim.html', context)
+    return render(request, 'iletisim_son.html', context)

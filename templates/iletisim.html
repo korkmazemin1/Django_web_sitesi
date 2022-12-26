@@ -1,4 +1,8 @@
- </section>
+{% extends 'header.html' %}
+{% block baslik %}{{ Ayarlar.baslik }}{% endblock %}
+{% include 'anaicerik_extend.html' %}
+{% block ozel %}
+
       <!-- <section> close ============================-->
       <!-- ============================================-->
 
@@ -7,12 +11,12 @@
 
       <!-- ============================================-->
       <!-- <section> begin ============================-->
-      <section class="py-4" id="contact">
+      <section class="py-4" id="iletisim">
 
         <div class="container px-md-5">
           <div class="row align-items-center">
             <div class="my-4 text-center">
-              <h1 class="text-uppercase fs-lg-8 fs-6 fw-bolder text-300 lh-1 position-relative z-index-0">Contact</h1>
+              <h1 class="text-uppercase fs-lg-8 fs-6 fw-bolder text-300 lh-1 position-relative z-index-0">iletisim</h1>
               <h1 class="fw-bolder text-outlined fs-7 text-white lh-1 mt-n4 position-relative z-index--1">Get in Touch</h1>
                 {% if message %}
                     {% for message in messages %}
@@ -28,16 +32,16 @@
 
                       <div class="form-floating mb-3">
                         <input class="form-control form-fotogency-header-control" id="floatingName" type="text" placeholder="isminiz" />
-                        <label for="floatingName">Your name</label>
+                        <label for="floatingName">isminiz</label>
 
                       </div>
                       <div class="form-floating mb-3">
-                        <input class="form-control form-fotogency-header-control" id="floatingPhone" type="tel" placeholder="name@example.com" />
-                        <label for="floatingPhone">Phone number</label>
+                        <input class="form-control form-fotogency-header-control" id="floatingPhone" type="tel" placeholder="telefon numbarası" />
+                        <label for="floatingPhone">telefon numarası</label>
                       </div>
                       <div class="form-floating mb-3">
                         <input class="form-control form-fotogency-header-control" id="floatingLocation" type="text" placeholder="Desired Location" />
-                        <label for="floatingLocation">Desired location</label>
+                        <label for="floatingLocation">atılan konum</label>
                       </div>
                       <div class="form-floating mb-3">
                         <input class="form-control form-fotogency-header-control text-400" id="floatingDate" type="text" placeholder="Desired Date" />
@@ -62,7 +66,8 @@
                     </div>
                   </div>
                   <div class="col-12 text-end mt-3">
-                    <button class="btn btn-link text-warning p-0" type="submit"><span class="fw-bolder text-uppercase">Gönder</span><img class="ms-3" src="assets/img/icons/long-arrow.png" alt="" /></button>
+                      {% load static %}
+                    <button class="btn btn-link text-warning p-0" type="submit"><span class="fw-bolder text-uppercase">Gönder</span><img class="ms-3" src={% static 'assets/img/icons/long-arrow.png' %} alt="" /></button>
                   </div>
 
               </form>
@@ -73,3 +78,5 @@
         <!-- end of .container-->
 
       </section>
+{% endblock %}
+{% include 'footer_extend.html' %}

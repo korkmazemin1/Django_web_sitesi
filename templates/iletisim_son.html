@@ -1,7 +1,42 @@
 {% extends "header.html" %}
 {% block baslik %} {{ Ayarlar.iletisim }} {% endblock %}
 {% block anaicerik %}{% include 'anaicerik_extend.html' %}{% endblock %}
-{% block ozel %}{% include 'iletisim.extend.html'%}{% endblock %}
+{% block ozel %}
+    <main>
+    <section class="py-4" id="contact">
+
+        <div class="container px-md-5">
+            <h1 class="text-uppercase fs-lg-8 fs-6 fw-bolder text-300 lh-1 position-relative z-index-0">İLetişim</h1>
+            <h1 class="fw-bolder text-outlined fs-7 text-white lh-1 mt-n4 position-relative z-index--1">Derdin nedir oğul</h1>
+            {% if message %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            <form class="my-5 px-3" action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+
+
+
+
+
+
+                <div class="col-12 text-end mt-3">
+                    <button class="btn btn-link text-warning p-0" type="submit"><span class="fw-bolder text-uppercase">Gönder</span><img class="ms-3" src="assets/img/icons/long-arrow.png" alt="" /></button>
+                </div>
+
+            </form>
+            {{ Ayarlar.contact|safe }}
+        </div>
+        <!-- end of .container-->
+
+      </section>{% endblock %}
+</main>
 {% block footer %}{% include 'footer_extend.html' %}{% endblock %}
 
 

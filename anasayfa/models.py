@@ -51,7 +51,7 @@ class IletisimFormuMesaj(models.Model):
     mesaj = models.CharField(blank=True, max_length=200, null=True)
     bizi_nereden = models.CharField(blank=True, max_length=20)
     mesaj_durumu = models.CharField(max_length=10, choices=STATUS, default="YENİMESAJ", null=True)
-    ip = models.CharField(blank=True, max_length=20, null=True)
+    ip = models.CharField(blank=True, max_length=100)
     create_at = models.DateTimeField(auto_now_add=True, null=True)
     update_at = models.DateTimeField(auto_now=True, null=True)
 
@@ -62,7 +62,7 @@ class IletisimFormuMesaj(models.Model):
 class IletisimFormu(ModelForm):
     class Meta:
         model = IletisimFormuMesaj
-        fields = ['isminiz', 'konu', 'email', 'mesaj', 'ip']
+        fields = ['isminiz', 'konu', 'email', 'mesaj']
         widgets = {
             'isminiz': TextInput(attrs={'class': 'input', 'placeholder': 'İsim ve Soyisim'}),
             'konu': TextInput(attrs={'class': 'input', 'placeholder': 'Konu'}),
