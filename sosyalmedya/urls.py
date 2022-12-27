@@ -19,6 +19,8 @@ from django.conf.urls.static import static
 from django.template.defaulttags import url
 from django.urls import path, include
 
+import kontrol.views
+import paylasim.views
 from anasayfa import views
 
 urlpatterns = [
@@ -30,8 +32,9 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('hakkimizda/',views.hakkimizda,name='hakkimizda'),
     path('kontrol/',include('django.contrib.auth.urls')),
-    path('kontrol/', include('kontrol.urls'))
-
+    path('kontrol/', include('kontrol.urls')),
+    path('profil/',paylasim.views.fotimiyukle,name='profil'),
+    path('kayit/',kontrol.views.kayit,name='kayit')
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

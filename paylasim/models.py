@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import ModelForm
 from django.utils.safestring import mark_safe
 from ckeditor_uploader.fields import RichTextUploadingField
 
@@ -38,3 +39,15 @@ class fotiler(models.Model):# videodaki images
     def foti_tag(self):
         return mark_safe('<img src="{}" height="50"/>'.format(self.foti.url))
     foti_tag.short_description= "gönderi"
+
+
+class fotiyukle(ModelForm):
+    class Meta:
+        model = fotiler
+        fields = [
+            'baslik',
+            'sahibi',
+            'foti',
+            'aciklama',
+
+        ]

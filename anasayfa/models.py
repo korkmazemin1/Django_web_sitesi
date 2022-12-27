@@ -2,6 +2,8 @@ from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.forms import ModelForm, TextInput, Textarea
 
+import paylasim.models
+
 
 # Create your models here.
 class ayarlar(models.Model):  # videodaki images
@@ -70,3 +72,5 @@ class IletisimFormu(ModelForm):
             'mesaj': TextInput(attrs={'class': 'id', 'placeholder': 'Mesajınız', 'rows': 'S'})
 
         }
+
+
