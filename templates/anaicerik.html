@@ -45,7 +45,7 @@
                   <h1 class="ms-2 fw-bolder text-outlined text-uppercase text-white pe-none display-1">{% block büyükyazisag %}{% endblock %}</h1>
                 </div>
                   {% load static %}
-                <div class="d-flex gap-3 align-items-start"><a class="mb-0 ms-auto text-warning fs-0 fw-bold text-uppercase" href="{% static 'blog.html#contact'%}">{% block iletisimsayfa %}{% endblock %}</a>
+                <div class="d-flex gap-3 align-items-start"><a class="mb-0 ms-auto text-warning fs-0 fw-bold text-uppercase" href="/iletisim">{% block iletisimsayfa %}{% endblock %}</a>
                   <ul class="navbar-nav navbar-fotogency ms-auto text-end">
                     <li class="nav-item px-2 position-relative"><a class="nav-link pt-0 {% block activeanasayfa %}{% endblock %}" aria-current="page" href="/anasayfa">{% block sayfaliste1 %}{% endblock %}</a></li>
                     <li class="nav-item px-2 position-relative"><a class="nav-link pt-0 {% block activeprofil %}{% endblock %}" aria-current="page" href="{% static 'portfolio.html'%}">{% block sayfaliste2 %}{% endblock %}</a></li>
