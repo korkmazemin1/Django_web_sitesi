@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.safestring import mark_safe
-
+from ckeditor_uploader.fields import RichTextUploadingField
 
 class kullanici(models.Model):# videodaki product
     STATUS = (
@@ -23,15 +23,15 @@ class fotiler(models.Model):# videodaki images
     baslik=models.CharField(max_length=54,blank=True,null=True)
     sahibi =models.ForeignKey(kullanici,on_delete=models.CASCADE)# kullanıcı sınıfından bir obje ebevyni oldu(parent)
     foti= models.ImageField(blank=True,upload_to='images/')# images olarak uploada kaydoldu ,eğer sınıflandırılmak istenirse images yazan yerde nereye lazımsa o şekilde yazabilirsin
-    aciklama= models.CharField(max_length=54,blank=True,null=True)
-    slug = models.SlugField(blank=True,max_length=200)
+    aciklama= models.CharField(max_length=500,blank=True,null=True)
+
     def __str__(self):
          full_path=[self.baslik]
          k=self.sahibi
          while k is not None:
              full_path.append(k.kullaniciadi)
-             k = k.sahibi
-         return '>>'.join(full_path[::-1])
+             k = k.ebeveyn
+         return '->'.join(full_path[::-1])
 
 
 

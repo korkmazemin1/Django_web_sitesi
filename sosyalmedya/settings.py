@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'paylasim.apps.PaylasimConfig',
     'anasayfa.apps.AnasayfaConfig',
+    'kontrol.apps.KontrolConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

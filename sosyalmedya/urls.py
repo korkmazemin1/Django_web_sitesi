@@ -22,13 +22,15 @@ from django.urls import path, include
 from anasayfa import views
 
 urlpatterns = [
-    path('', include("anasayfa.urls")),
+    path('', include("kontrol.urls")),
     path('anasayfa/',views.anasayfayz,name='anasayfa'),
     path('iletisim/',views.iletisim,name='iletisim'),
     path('paylasim/', include("paylasim.urls")),
     path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-    path('hakkimizda/',views.hakkimizda,name='hakkimizda')
+    path('hakkimizda/',views.hakkimizda,name='hakkimizda'),
+    path('kontrol/',include('django.contrib.auth.urls')),
+    path('kontrol/', include('kontrol.urls'))
 
 ]
 if settings.DEBUG:
